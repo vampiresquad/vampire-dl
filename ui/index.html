@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VampireDL</title>
+    <style>
+        body { 
+            background-color: #121212; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 30px; 
+        }
+        h1 { color: #e50914; margin-bottom: 5px; }
+        .subtitle { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .container { max-width: 900px; margin: auto; }
+        .input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        
+        input[type="text"] { 
+            flex: 1; padding: 12px; border-radius: 6px; 
+            border: 1px solid #333; background: #222; color: white; 
+            outline: none;
+        }
+        input[type="text"]:focus { border-color: #e50914; }
+        
+        button { 
+            padding: 12px 25px; background-color: #e50914; 
+            color: white; border: none; border-radius: 6px; 
+            cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        button:hover { background-color: #b20710; }
+        
+        .status-box { 
+            margin-top: 20px; padding: 20px; 
+            background: #1e1e1e; border-radius: 8px; border-left: 4px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦇 VampireDL</h1>
+        <div class="subtitle">Advanced High-Performance Download Manager by VAMPIRE_SQUAD</div>
+
+        <div class="input-group">
+            <input type="text" id="url-input" placeholder="Enter download URL here (e.g., https://example.com/file.zip)">
+            <input type="text" id="path-input" placeholder="Save path (e.g., ./downloaded_file.zip)">
+            <button id="download-btn">Start Download</button>
+        </div>
+
+        <div class="status-box" id="status-box">
+            <p style="color: #aaa;">Status: Ready for action. Waiting for URL...</p>
+        </div>
+    </div>
+    
+    <script>
+        const { invoke } = window.__TAURI__.tauri;
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
