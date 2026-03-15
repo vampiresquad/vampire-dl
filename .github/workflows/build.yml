@@ -1,0 +1,34 @@
+name: Build VampireDL Desktop
+
+# এই অপশনটির মাধ্যমে আপনি গিটহাব থেকে ম্যানুয়ালি বাটনে ক্লিক করে বিল্ড শুরু করতে পারবেন
+on:
+  workflow_dispatch: 
+
+jobs:
+  build-windows:
+    name: Build Windows App
+    runs-on: windows-latest
+
+    steps:
+      # ১. রিপোজিটরি থেকে কোড কপি করা
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ২. Rust সেটআপ করা
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      # ৩. Tauri ব্যবহার করে .exe অ্যাপ তৈরি করা
+      - name: Build Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: platform/desktop
+          tagName: v0.1.0
+          releaseName: "VampireDL v0.1.0 (Beta)"
+          releaseBody: "VampireDL Windows Release. Download the .exe file below to install."
+          releaseDraft: false
+          prerelease: false
