@@ -1,0 +1,16 @@
+[package]
+name = "vampire-desktop"
+version = "0.1.0"
+edition = "2021"
+description = "VampireDL Desktop Application using Tauri"
+
+[dependencies]
+# আমাদের তৈরি করা Core ইঞ্জিন এখানে সরাসরি যুক্ত করা হলো (DRY Principle)
+vampire-core = { path = "../../core" }
+tauri = { version = "1.5", features = ["api-all"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[build-dependencies]
+tauri-build = "1.5"
