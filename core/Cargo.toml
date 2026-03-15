@@ -1,0 +1,8 @@
+[package]
+name = "vampire-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core engine for VampireDL"
+
+[dependencies]
+# পরবর্তীতে আমরা এখানে নেটওয়ার্ক (reqwest) এবং অন্যান্য ডিপেন্ডেন্সি যুক্ত করব
