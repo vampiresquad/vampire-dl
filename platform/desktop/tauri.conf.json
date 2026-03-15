@@ -1,0 +1,36 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../../ui",
+    "distDir": "../../ui"
+  },
+  "package": {
+    "productName": "VampireDL",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "VAMPIRE_SQUAD",
+      "identifier": "com.vampiresquad.vampiredl",
+      "targets": "all"
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 700,
+        "resizable": true,
+        "title": "VampireDL - Ultimate Downloader",
+        "width": 1000
+      }
+    ]
+  }
+}
