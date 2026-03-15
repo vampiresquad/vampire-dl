@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "core",
+    "platform/desktop"
 ]
 
 [profile.release]
